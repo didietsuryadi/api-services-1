@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var moviesController = require('../controllers/movie');
+var tvsController = require('../controllers/tv');
 
 router.get('/api/movies')
 router.get('/api/movies/:id')
