@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var Schema = mongoose.schema()
+var Schema = mongoose.Schema
 
 var tvSchema = new Schema({
   title : String,
