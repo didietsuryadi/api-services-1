@@ -13,10 +13,11 @@ mongoose.connect('mongodb://localhost/entertaiment', function (err) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// app.use('/', function(req, res) {
+//   res.send("iam live")
+// })
 app.use('/api', api);
 
-app.use('/', function(req, res) {
-  res.send("iam live")
-})
+
 
 app.listen(3000)

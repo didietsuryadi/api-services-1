@@ -16,7 +16,7 @@ module.exports = {
       }
     })
   },
-  updateMovie: function(){
+  updateMovie: function(req,res){
     Movie.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, data){
       if (err){
         res.send(err)
@@ -25,7 +25,7 @@ module.exports = {
       }
     })
   },
-  deleteMovie: function(){
+  deleteMovie: function(req,res){
     Movie.findOneAndRemove({_id:req.params.id}, function(err, data){
       if (err){
         res.send(err)
@@ -34,7 +34,7 @@ module.exports = {
       }
     })
   },
-  readMovies: function(){
+  readMovies: function(req,res){
     Movie.find({}, function(err,data){
       if(err){
         res.send(err)
@@ -43,7 +43,7 @@ module.exports = {
       }
     })
   },
-  readMovie: function(){
+  readMovie: function(req,res){
     Movie.find({_id:req.params.id}, function(err,data){
       if(err){
         res.send(err)
@@ -51,5 +51,5 @@ module.exports = {
         res.send(data)
       }
     })
-  },
+  }
 }

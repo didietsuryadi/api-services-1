@@ -16,7 +16,7 @@ module.exports = {
       }
     })
   },
-  updateTv: function(){
+  updateTv: function(req,res){
     Tv.findOneAndUpdate({_id:req.params.id}, req.body, {new:true}, function(err, data){
       if (err){
         res.send(err)
@@ -25,7 +25,7 @@ module.exports = {
       }
     })
   },
-  deleteTv: function(){
+  deleteTv: function(req,res){
     Tv.findOneAndRemove({_id:req.params.id}, function(err, data){
       if (err){
         res.send(err)
@@ -34,7 +34,7 @@ module.exports = {
       }
     })
   },
-  readTvs: function(){
+  readTvs: function(req,res){
     Tv.find({}, function(err,data){
       if(err){
         res.send(err)
@@ -43,7 +43,7 @@ module.exports = {
       }
     })
   },
-  readTv: function(){
+  readTv: function(req,res){
     Tv.find({_id:req.params.id}, function(err,data){
       if(err){
         res.send(err)
@@ -51,5 +51,5 @@ module.exports = {
         res.send(data)
       }
     })
-  },
+  }
 }
